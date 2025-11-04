@@ -23,6 +23,7 @@ PyQt6_sip @ file:///C:/miniconda3/conda-bld/pyqt-split_1757511038427/work/pyqt_s
 pytest==8.4.2
 python-dateutil @ file:///C:/b/abs_3au_koqnbs/croot/python-dateutil_1716495777160/work
 pytz @ file:///C:/b/abs_f8wdzeix0n/croot/pytz_1752135878094/work
+ruff==0.14.2
 scikit-learn @ file:///C:/miniconda3/conda-bld/scikit-learn_1758619648094/work
 scipy @ file:///C:/miniconda3/conda-bld/scipy_1759489070186/work/dist/scipy-1.16.2-cp311-cp311-win_amd64.whl#sha256=3508ab5841192f24b66c11b0873abf889a5df612a0308b4fe4e0fbf5abdaa6f9
 seaborn @ file:///C:/b/abs_0bv5x0ucxb/croot/seaborn_1749110315600/work
