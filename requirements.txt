@@ -1,6 +1,7 @@
 Bottleneck @ file:///C:/b/abs_816hr2khp1/croot/bottleneck_1731058648110/work
 colorama==0.4.6
 contourpy @ file:///C:/b/abs_f2u2o_8s9g/croot/contourpy_1732540071787/work
+coverage==7.11.0
 cycler @ file:///tmp/build/80754af9/cycler_1637851556182/work
 fonttools @ file:///C:/miniconda3/conda-bld/fonttools_1759754888085/work
 iniconfig==2.3.0
@@ -21,6 +22,7 @@ pyparsing @ file:///C:/b/abs_40z8gyj9wi/croot/pyparsing_1731445739241/work
 PyQt6==6.9.1
 PyQt6_sip @ file:///C:/miniconda3/conda-bld/pyqt-split_1757511038427/work/pyqt_sip
 pytest==8.4.2
+pytest-cov==7.0.0
 python-dateutil @ file:///C:/b/abs_3au_koqnbs/croot/python-dateutil_1716495777160/work
 pytz @ file:///C:/b/abs_f8wdzeix0n/croot/pytz_1752135878094/work
 ruff==0.14.2
