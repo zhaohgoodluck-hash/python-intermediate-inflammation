@@ -15,30 +15,17 @@ def main(args):
     - selecting the necessary models and views for the current task
     - passing data between models and views
     """
-    infiles = args.infiles
-    if not isinstance(infiles, list):
-        infiles = [args.infiles]
-
-
-    if args.full_data_analysis:
-        _, extension = os.path.splitext(infiles[0])
-        if extension == '.json':
-            data_source = JSONDataSource(os.path.dirname(infiles[0]))
-        elif extension == '.csv':
-            data_source = CSVDataSource(os.path.dirname(infiles[0]))
-        else:
-            raise ValueError(f'Unsupported data file format: {extension}')
-        analyse_data(data_source)
-        return
-
-    for filename in infiles:
+    in_files = args.in_files
+    if not isinstance(in_files, list):
+        in_files = [args.in_files]
+    for filename in in_files:
         inflammation_data = models.load_csv(filename)
 
         view_data = {
-            'average': models.daily_mean(inflammation_data),
-            'max': models.daily_max(inflammation_data),
+            'average': models.daily_mean(inflammation_data), 
+            'max': models.daily_max(inflammation_data), 
             'min': models.daily_min(inflammation_data)
-        }
+            }
 
         views.visualize(view_data)
 
@@ -48,7 +35,7 @@ if __name__ == "__main__":
         description='A basic patient inflammation data management system')
 
     parser.add_argument(
-        'infiles',
+        'in_files',
         nargs='+',
         help='Input CSV(s) containing inflammation series for each patient')
 
@@ -60,3 +47,4 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     main(args)
+
