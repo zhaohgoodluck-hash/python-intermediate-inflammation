@@ -28,11 +28,19 @@ def load_json(filename):
         return [np.array(entry['observations']) for entry in data_as_json]
 
 def load_csv(filename):  
-    """Load a Numpy array from a CSV
+  """Load a Numpy array from csv
 
-    :param filename: Filename of CSV to load
-    """
-    return np.loadtxt(fname=filename, delimiter=',')
+      Parameters
+      ----------
+      filename : str
+          path to the csv file
+
+      Returns
+      -------
+      np.ndarray
+          2D array of inflammation data
+  """
+  return np.loadtxt(fname=filename, delimiter=',')
 
 
 def daily_mean(data):
