@@ -50,6 +50,13 @@ def daily_min(data):
     return np.min(data, axis=0)
 
 
+def patient_normalise(data):
+    """Normalise patient data from a 2D inflammation data array."""
+    max = np.max(data, axis=0)
+    return data / max[:, np.newaxis]
+
+
+
 def daily_above_threshold(patient_num, data, threshold):
 
     """Determine whether or not each daily inflammation value exceeds a given threshold for a given patient.
