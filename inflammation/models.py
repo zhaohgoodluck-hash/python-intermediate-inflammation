@@ -9,6 +9,23 @@ and each column represents a single day across all patients.
 
 import numpy as np
 
+def load_json(filename):
+    """Load a numpy array from a JSON document.
+    
+    Expected format:
+    [
+      {
+        "observations": [0, 1]
+      },
+      {
+        "observations": [0, 2]
+      }    
+    ]
+    :param filename: Filename of CSV to load
+    """
+    with open(filename, 'r', encoding='utf-8') as file:
+        data_as_json = json.load(file)
+        return [np.array(entry['observations']) for entry in data_as_json]
 
 def load_csv(filename):  
     """Load a Numpy array from a CSV
@@ -32,3 +49,15 @@ def daily_min(data):
     """Calculate the daily min of a 2D inflammation data array."""
     return np.min(data, axis=0)
 
+
+def daily_above_threshold(patient_num, data, threshold):
+
+    """Determine whether or not each daily inflammation value exceeds a given threshold for a given patient.
+
+    :param patient_num: The patient row number
+    :param data: A 2D data array with inflammation data
+    :param threshold: An inflammation threshold to check each daily value against
+    :returns: A boolean list representing whether or not each patient's daily inflammation exceeded the threshold
+    """
+
+    return list(map(lambda x: x > threshold, data[patient_num]))
